@@ -9,5 +9,7 @@ public class Role : BaseEntity<Guid> {
     public string NormalizedName { get; set; } = string.Empty;
 
     public Permission Permission { get; set; }
+
+    public Guid UserId {get;set;}
     
 }

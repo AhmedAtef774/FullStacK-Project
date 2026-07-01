@@ -16,7 +16,7 @@ public class User : BaseEntity<Guid> {
 
     public bool IsLocked { get; set; } = false;
 
-    public string PhoneNumber {get;set;}
+    public string PhoneNumber {get;set;} = string.Empty;
 
     public bool EmailConfirmed {get;set;} = false;
 

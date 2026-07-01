@@ -18,9 +18,9 @@ public class Repository<TEntity,TKey> : IRepository<TEntity,TKey> where TEntity 
       connection.Open();
 
       var sql = @$"INSERT INTO {GetTableName()} ({GetColumnNames()}) VALUES({GetColumnNamesWithAt()})
-                    ";
+                    SELECT CAST(SCOPE_IDENTITY() AS INT)";
 
-      var result = await connection.ExecuteAsync(sql, new {entity});
+      var result = await connection.ExecuteScalarAsync<int>(sql, new {entity});
 
       return result;
    }

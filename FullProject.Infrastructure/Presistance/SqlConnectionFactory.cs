@@ -12,7 +12,7 @@ public class SqlConnectionFactory : IDbConnectionFactory {
     {
         _configuration = configuration;
 
-       connectionstring =  _configuration.GetConnectionString("Default") ?? throw new ArgumentNullException("Default");
+       connectionstring =  _configuration.GetConnectionString("SqlConnection") ??throw new ArgumentNullException("Default");
     }
     public IDbConnection CreateConnection() {
         return new SqlConnection(connectionstring);

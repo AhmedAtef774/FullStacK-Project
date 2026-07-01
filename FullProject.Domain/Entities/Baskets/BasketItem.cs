@@ -1,3 +1,5 @@
+using FullProject.Domain.Entities;
+
 public class BasketItem : BaseEntity<int> {
 
     public int ProductId {get;set;}
